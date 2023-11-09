@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../Store/cartSlice";
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -11,6 +13,12 @@ const ProductPage = () => {
     };
     fetchProducts();
   }, []);
+
+  const dispatch = useDispatch();
+
+  const handleAddProduct = (product) => {
+    dispatch(addItem(product));
+  };
 
   const productRatings = (rating) => {
     return rating >= 4.0 ? "good" : rating >= 3.0 ? "moderate" : "bad";
@@ -39,7 +47,10 @@ const ProductPage = () => {
               </p>
             </div>
 
-            <div className="add-to-cart">
+            <div
+              className="add-to-cart"
+              onClick={() => handleAddProduct(product)}
+            >
               <p>Add to cart</p>
             </div>
           </div>
