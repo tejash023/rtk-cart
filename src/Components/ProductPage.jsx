@@ -12,6 +12,16 @@ const ProductPage = () => {
     fetchProducts();
   }, []);
 
+  const productRatings = (rating) => {
+    if (rating >= 4.0) {
+      return "good";
+    } else if (rating < 4.0 && rating >= 3.0) {
+      return "moderate";
+    } else {
+      return "bad";
+    }
+  };
+
   return (
     <div className="product-container">
       {products.map((product) => (
@@ -25,8 +35,12 @@ const ProductPage = () => {
             <p>{product.description}</p>
 
             <div className="more-details">
-              <p class="product-category">{product.category}</p>
-              <p class="product-rating moderate">
+              <p className="product-category">{product.category}</p>
+              <p
+                className={`product-rating ${productRatings(
+                  product.rating.rate
+                )}`}
+              >
                 {product.rating.rate} <i class="fa fa-star"></i>
               </p>
             </div>
