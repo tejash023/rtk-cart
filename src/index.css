@@ -6,35 +6,16 @@
   font-family: "Roboto", sans-serif;
 }
 
-#main-header {
+.header {
   background-image: linear-gradient(19deg, #092f38 0%, #b721ff 100%);
-  /* background-color: orangered; */
-  padding: 1%;
+  height: 7vh;
+  padding: 1% 2%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   top: 0;
   position: sticky;
   transition: all 0.2s ease-in;
-}
-
-.header-scrolled {
-  background: rgb(40 63 92 / 81%) !important;
-  backdrop-filter: blur(2px);
-}
-
-header input {
-  width: 30%;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  margin-right: 15px;
-  z-index: 100;
-}
-header input:focus {
-  width: 38%;
-  transition: all 0.1 ease-in;
 }
 
 .product-controls {
@@ -79,7 +60,7 @@ header input:focus {
   padding: 15px 10px;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  max-height: 300px;
+  max-height: 350px;
   cursor: pointer;
 }
 
@@ -161,7 +142,29 @@ header input:focus {
   color: white;
 }
 
-footer {
+.add-to-cart {
+  padding: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.add-to-cart:hover {
+  cursor: pointer;
+  background-color: #409443;
+}
+
+.add-to-cart p {
+  color: white;
+  font-weight: 400;
+}
+
+.footer {
   padding: 1.5%;
   color: white;
   background-image: linear-gradient(19deg, #26337c 0%, #253798 100%);
@@ -170,29 +173,39 @@ footer {
   justify-content: center;
 }
 
+.logo {
+  color: white;
+  font-weight: 500;
+}
+
+.cart-items p {
+  color: white;
+  font-weight: 500;
+}
+
 @media only screen and (max-width: 900px) {
   .product-card {
     width: 45%;
   }
 
-  header input {
+  .header input {
     width: 55%;
   }
-  header input:focus {
+  .header input:focus {
     width: 60%;
     transition: all 0.1 ease-in;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  header {
+  .header {
     padding: 2%;
   }
 
-  header input {
+  .header input {
     width: 50%;
   }
-  header input:focus {
+  .header input:focus {
     width: 58%;
     transition: all 0.1 ease-in;
   }

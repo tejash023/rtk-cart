@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -13,13 +13,7 @@ const ProductPage = () => {
   }, []);
 
   const productRatings = (rating) => {
-    if (rating >= 4.0) {
-      return "good";
-    } else if (rating < 4.0 && rating >= 3.0) {
-      return "moderate";
-    } else {
-      return "bad";
-    }
+    return rating >= 4.0 ? "good" : rating >= 3.0 ? "moderate" : "bad";
   };
 
   return (
@@ -43,6 +37,10 @@ const ProductPage = () => {
               >
                 {product.rating.rate} <i class="fa fa-star"></i>
               </p>
+            </div>
+
+            <div className="add-to-cart">
+              <p>Add to cart</p>
             </div>
           </div>
         </div>
