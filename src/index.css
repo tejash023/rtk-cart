@@ -1,69 +1,207 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+#main-header {
+  background-image: linear-gradient(19deg, #092f38 0%, #b721ff 100%);
+  /* background-color: orangered; */
+  padding: 1%;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  position: sticky;
+  transition: all 0.2s ease-in;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.header-scrolled {
+  background: rgb(40 63 92 / 81%) !important;
+  backdrop-filter: blur(2px);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+header input {
+  width: 30%;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-right: 15px;
+  z-index: 100;
+}
+header input:focus {
+  width: 38%;
+  transition: all 0.1 ease-in;
+}
+
+.product-controls {
+  background: #e3e3e3;
+  padding: 0px 45px;
+  padding-top: 20px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product-controls button {
+  outline: none;
+  border: none;
+  background: white;
+  padding: 5px 15px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.product-controls button:hover {
+  background: tomato;
+  color: white;
+}
+.product-container {
+  background: #e3e3e3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  padding: 2%;
+  min-height: 75vh;
+}
+
+.product-card {
+  width: 20%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  max-height: 300px;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transition: all 0.2s ease-in;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card img {
+  width: 70%;
+  max-height: 250px;
+}
+
+.product-details {
+  margin-top: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.product-title {
+  color: midnightblue;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.product-details p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+  margin: 5px 0;
+  color: grey;
+}
+
+.product-price {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.more-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.product-category {
+  border: 1px solid lightgray;
+  padding: 5px;
+}
+
+.product-rating {
+  font-weight: 600;
+}
+
+.good {
+  color: #4caf50 !important;
+}
+
+.moderate {
+  color: #ff9800 !important;
+}
+
+.bad {
+  color: #f44336 !important;
+}
+
+.active {
+  background-color: tomato !important;
+  color: white;
+}
+
+footer {
+  padding: 1.5%;
+  color: white;
+  background-image: linear-gradient(19deg, #26337c 0%, #253798 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .product-card {
+    width: 45%;
   }
-  a:hover {
-    color: #747bff;
+
+  header input {
+    width: 55%;
   }
-  button {
-    background-color: #f9f9f9;
+  header input:focus {
+    width: 60%;
+    transition: all 0.1 ease-in;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 2%;
+  }
+
+  header input {
+    width: 50%;
+  }
+  header input:focus {
+    width: 58%;
+    transition: all 0.1 ease-in;
+  }
+
+  .container {
+    padding-top: 20px;
+  }
+
+  .product-card {
+    width: 80%;
   }
 }
