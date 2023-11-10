@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../Store/cartSlice";
+import Loader from "./Loader";
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -24,7 +25,9 @@ const ProductPage = () => {
     return rating >= 4.0 ? "good" : rating >= 3.0 ? "moderate" : "bad";
   };
 
-  return (
+  return products.length === 0 ? (
+    <Loader />
+  ) : (
     <div className="product-container">
       {products.map((product) => (
         <div key={product.id} className="product-card">

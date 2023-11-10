@@ -200,7 +200,7 @@
   display: flex;
   flex-direction: column;
   min-height: 70vh;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -208,28 +208,54 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
   border-radius: 5px;
-  padding: 10px;
-  width: 60%;
+  padding: 15px;
+  width: 55%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .cart-page-items-details {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .cart-page-items-details img {
-  width: 7%;
+  width: 10%;
 }
 
 .cart-product-details {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 .cart-product-title {
   color: midnightblue;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  border: 1px solid midnightblue;
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+.qty {
+  font-size: 0.9rem;
+}
+
+.qty-button {
+  outline: none;
+  border: none;
+  background: white;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .delete-cart-items {
@@ -271,5 +297,73 @@
 
   .product-card {
     width: 80%;
+  }
+}
+
+/*Loader*/
+.loader-item {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48em;
+  height: 48em;
+  background-image: radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0),
+    radial-gradient(circle 10px, tomato 100%, transparent 0);
+  background-position: 0em -18em, 0em 18em, 18em 0em, -18em 0em, 13em -13em,
+    -13em -13em, 13em 13em, -13em 13em;
+  background-repeat: no-repeat;
+  font-size: 0.5px;
+  border-radius: 50%;
+  animation: blast 1s ease-in infinite;
+}
+.loader::after {
+  font-size: 1px;
+  background: tomato;
+  animation: bounce 1s ease-in infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    font-size: 0.75px;
+  }
+  50% {
+    font-size: 1.5px;
+  }
+}
+@keyframes blast {
+  0%,
+  40% {
+    font-size: 0.5px;
+  }
+  70% {
+    opacity: 1;
+    font-size: 4px;
+  }
+  100% {
+    font-size: 6px;
+    opacity: 0;
   }
 }

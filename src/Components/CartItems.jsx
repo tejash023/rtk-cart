@@ -5,8 +5,13 @@ const CartItems = ({ cartItem }) => {
         <img src={cartItem.image} alt={cartItem.title} />
         <div className="cart-product-details">
           <h5 className="cart-product-title">{cartItem.title}</h5>
-          <p>Qty:1</p>
-          <p>Rs. {cartItem.price}</p>
+          <div className="cart-quantity">
+            <button className="qty-button">-</button>
+            <p className="qty">Qty:1</p>
+            <button className="qty-button">+</button>
+          </div>
+
+          <h5>Rs. {cartItem.price}</h5>
         </div>
       </div>
 
