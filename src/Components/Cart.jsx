@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import CartItems from "./CartItems";
 
 const Cart = () => {
@@ -12,7 +13,12 @@ const Cart = () => {
           <CartItems key={cartItem.id} cartItem={cartItem} />
         ))
       ) : (
-        <p>Nothing here!! Try adding something from our products.</p>
+        <div className="empty-cart">
+          <p>Nothing here!! Try adding something from our products.</p>
+          <Link to="/">
+            <button className="empty-cart-button">Shop Products</button>
+          </Link>
+        </div>
       )}
     </div>
   );
