@@ -43,7 +43,7 @@ const ProductPage = () => {
                   product.rating.rate
                 )}`}
               >
-                {product.rating.rate} <i class="fa fa-star"></i>
+                {product.rating.rate} <i className="fa fa-star"></i>
               </p>
             </div>
 

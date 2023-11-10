@@ -178,6 +178,10 @@
   font-weight: 500;
 }
 
+.cart-items {
+  text-decoration: none;
+}
+
 .cart-items p {
   color: white;
   font-weight: 500;
