@@ -187,6 +187,29 @@
   font-weight: 500;
 }
 
+.cart-page {
+  margin: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.cart-page-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
+  width: 60%;
+}
+
+.cart-page-items img {
+  width: 7%;
+}
+
 @media only screen and (max-width: 900px) {
   .product-card {
     width: 45%;

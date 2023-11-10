@@ -1,17 +1,19 @@
 import { useSelector } from "react-redux";
+import CartItems from "./CartItems";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
   return (
     <div className="cart-page">
-      {cartItems.map((cartItem) => (
-        <div key={cartItem.id}>
-          <img src={cartItem.image} alt={cartItem.title} />
-          <p>{cartItem.title}</p>
-          <p>{cartItem.price}</p>
-        </div>
-      ))}
+      <h3>Cart</h3>
+      {cartItems.length > 0 ? (
+        cartItems.map((cartItem) => (
+          <CartItems key={cartItem.id} cartItem={cartItem} />
+        ))
+      ) : (
+        <p>Nothing here!! Try adding something from our products.</p>
+      )}
     </div>
   );
 };
