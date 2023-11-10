@@ -5,7 +5,10 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
   return (
     <div className="header" id="main-header">
-      <h2 className="logo">RTK Store</h2>
+      <Link to="/" className="logo">
+        <h2>RTK Store</h2>
+      </Link>
+
       <Link to="/cart" className="cart-items">
         <p>Cart - {cartItems.length} item</p>
       </Link>
